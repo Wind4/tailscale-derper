@@ -23,7 +23,7 @@ Inspired by:
 
 ## Example
 
-### Docker Compose + Treafik
+### Docker Compose + Traefik
 
 ```yaml
 version: "3"
