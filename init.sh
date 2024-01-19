@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
-if [ "$DERP_VERIFY_CLIENTS" = "true" ]; then
-  /usr/sbin/tailscaled --state=/var/lib/tailscale/tailscaled.state >> /dev/stdout &
+if [[ -z $TS_AUTHKEY ]]; then
+  /usr/sbin/tailscaled --tun=userspace-networking --state=/var/lib/tailscale/tailscaled.state >> /dev/stdout &
   /usr/bin/tailscale up --login-server=$TS_SERVER --auth-key $TS_AUTHKEY $TS_EXTRA_ARGS >> /dev/stdout &
 fi
 
