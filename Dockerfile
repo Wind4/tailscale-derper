@@ -17,7 +17,6 @@ RUN apt-get update && \
     mkdir /app/certs
 
 ENV TS_SERVER https://controlplane.tailscale.com
-ENV TS_AUTHKEY tskey-abcdef1234567890
 ENV DERP_DOMAIN derp01.tailscale.com
 ENV DERP_CERT_MODE letsencrypt
 ENV DERP_CERT_DIR /app/certs
