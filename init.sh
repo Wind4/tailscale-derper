@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-if [[ -z $TS_AUTHKEY ]]; then
+if [ -n $TS_AUTHKEY ]; then
   /usr/sbin/tailscaled --tun=userspace-networking --state=/var/lib/tailscale/tailscaled.state >> /dev/stdout &
   /usr/bin/tailscale up --login-server=$TS_SERVER --auth-key $TS_AUTHKEY $TS_EXTRA_ARGS >> /dev/stdout &
 fi
